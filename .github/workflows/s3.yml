@@ -26,4 +26,4 @@ jobs:
       # Step 3: html 디렉터리 내용을 S3 버킷으로 동기화
       - name: S3 버킷 파일 동기화
         run: |
-          aws s3 sync ./html s3://${{ secrets.S3_BUCKET_NAME }} --delete
+          aws s3 sync ./html s3://${{ secrets.S3_BUCKET_NAME }} --delete --acl public-read
